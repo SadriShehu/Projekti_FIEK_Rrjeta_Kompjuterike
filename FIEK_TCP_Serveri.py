@@ -55,6 +55,33 @@ while kondita:
             pergjigja = kushti[7:len(kushti)].lower().capitalize()
         else:
             pergjigja = "Formati: PRINTO [teksti]";
+            elif kushti[0:3] == "MAX":
+        if kushti[3:4] == " ":
+            kushti = kushti.split(" ")
+
+            num1 = int(kushti[1])
+            num2 = int(kushti[2])
+
+            if (num1 > num2):
+                pergjigja = kushti[1]
+            else:
+                pergjigja = kushti[2]
+        else:
+            pergjigja = "MAX [numri] [numri]"
+
+    elif kushti[0:3] == "MIN":
+        if kushti[3:4] == " ":
+            kushti = kushti.split(" ")
+
+            num1 = int(kushti[1])
+            num2 = int(kushti[2])
+
+            if (num1 < num2):
+                pergjigja = kushti[1]
+            else:
+                pergjigja = kushti[2]
+        else:
+            pergjigja = "MIN [numri] [numri]"
                 elif kushti == "HOST":
         try:
             h = platform.uname()[1]
@@ -95,41 +122,6 @@ while kondita:
                 pergjigja = str(math.sqrt(3))
         else:
             pergjigja = "Formati: CONSTANT [KONSTANTA]\n TE NJOHURA: \nPI \n E \n TAU \n SQRT2 \n SQRT3"
-            elif kushti[0:8] == "FIZZBUZZ":
-        if kushti[8:9] == " ":
-            numri = int(kushti[9:len(kushti)])
-        if numri % 5 == 0 and numri % 3 == 0:
-            pergjigja = "FizzBuzz"
-        elif numri % 3 == 0:
-            pergjigja = "Fizz"
-        elif numri % 5 == 0:
-            pergjigja = "Buzz"
-        else:
-            pergjigja = "Nuk keni japur numer te vlefshem!"
-            elif kushti[0:6] == "VALUTA":
-        if kushti[6:7] == " ":
-            string = kushti.split(" ")
-            if string[1] == '1':
-                pergjigja = str(round(float(string[2]) * 1.06, 2))
-            elif string[1] == '2':
-                pergjigja = str(round(float(string[2]) * 0.94, 2))
-            elif string[1] == '3':
-                pergjigja = str(round(float(string[2]) * 1.07, 2))
-            elif string[1] == '4':
-                pergjigja = str(round(float(string[2]) * 0.94, 2))
-            elif string[1] == '5':
-                pergjigja = str(round(float(string[2]) * 0.85, 2))
-            elif string[1] == '6':
-                pergjigja = str(round(float(string[2]) * 1.18, 2))
-        else:
-            pergjigja = "Formati: VALUTA [NUMRI I OPERACIONI] [VLERA PER KONVERTIM]"
-            pergjigja += "\nZgjedh njerin nga OPERACIONET:"
-            pergjigja += "\n1 - EurToUSD"
-            pergjigja += "\n2 - USDToEur" 
-            pergjigja += "\n3 - EurToCHF" 
-            pergjigja += "\n4 - CHFToEur"
-            pergjigja += "\n5 - EurToGBP"
-            pergjigja += "\n6 - GBPToEur"
         else:
         pergjigja = "Shenoni njeren nga sherbimet tona: IP, PORT, ZANORE, PRINTO, HOST, TIME, KENO, FAKTORIEL, KONVERTO, ARMSTRONG, FIBONNACI."
 
