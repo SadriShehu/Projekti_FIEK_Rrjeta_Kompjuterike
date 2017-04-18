@@ -29,7 +29,23 @@ while kondita:
         pergjigja =  "IP adresa e klientit eshte " + str(clientAddress[0])
     elif kushti == "PORT":
         pergjigja = "Klienti eshte duke perdorur portin " + str(socketName[1])
-        
+    elif kushti[0:6] == "ZANORE":
+        if kushti[0:7] == "ZANORE ":
+            string = kushti[7:len(kushti)]
+            string = string.replace(" ", "")
+            numri_zanoreve = 0
+            for i in string:
+                if i == 'A' or i == 'E' or i == 'U' or i == 'O' or i == 'Y' or i == 'I':
+                     numri_zanoreve += 1
+
+            pergjigja = " Teksti derguar permban " + str(numri_zanoreve) + " zanore.  "
+        else:
+            pergjigja = "Formati: ZANORE [teksti]";
+    elif kushti[0:6] == "PRINTO":
+        if kushti[0:7] == "PRINTO ":
+            pergjigja = kushti[7:len(kushti)].lower().capitalize()
+        else:
+            pergjigja = "Formati: PRINTO [teksti]";
     
     
     try:
