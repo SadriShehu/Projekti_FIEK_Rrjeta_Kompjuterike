@@ -55,7 +55,7 @@ while kondita:
             pergjigja = kushti[7:len(kushti)].lower().capitalize()
         else:
             pergjigja = "Formati: PRINTO [teksti]";
-            elif kushti[0:3] == "MAX":
+    elif kushti[0:3] == "MAX":
         if kushti[3:4] == " ":
             kushti = kushti.split(" ")
 
