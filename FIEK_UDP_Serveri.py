@@ -1,0 +1,40 @@
+from socket import *
+
+port = 9000
+
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+
+try:
+    serverSocket.bind(('',port))
+    kondita = True
+except:
+    print("Vetem nje instance e serverit eshte e lejuar!")
+    kondita = False
+    pass
+
+if kondita:
+    print("FIEK UDP Serveri eshte i gatshem...\n")
+
+while kondita:
+    try:
+        kerkesa, clientAddress = serverSocket.recvfrom(2048)
+        kushti = kerkesa.decode("ASCII")
+        socketName = socket.getsockname(serverSocket)
+        print(str(clientAddress[0]) + ":" + str(clientAddress[1]) + " Kerkesa " + kushti.split(" ")[0] + " eshte pranuar...")
+    except:
+        continue
+        pass
+
+    if kushti == "IP":
+        pergjigja =  "IP adresa e klientit eshte " + str(clientAddress[0])
+    elif kushti == "PORT":
+        pergjigja = "Klienti eshte duke perdorur portin " + str(socketName[1])
+        
+    
+    
+    try:
+        serverSocket.sendto(pergjigja.encode("ASCII"), clientAddress)
+        print( clientAddress[0] + ":" + str(clientAddress[1]) + " Pergjigja " + kushti.split(" ")[0] + " eshte derguar...")
+    except:
+        print(clientAddress[0] + ":" + str(clientAddress[1]) + " Pergjigja nuk mund te dergohet!")
+        pass
