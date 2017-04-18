@@ -1,5 +1,7 @@
 from socket import *
-
+import platform 
+from time import gmtime, strftime
+import random 
 port = 9000
 
 serverSocket = socket(AF_INET, SOCK_DGRAM)
@@ -46,6 +48,20 @@ while kondita:
             pergjigja = kushti[7:len(kushti)].lower().capitalize()
         else:
             pergjigja = "Formati: PRINTO [teksti]";
+                elif kushti == "HOST":
+        try:
+            h = platform.uname()[1]
+            pergjigja = "Emri i klientit eshte " + h
+        except:
+            pergjigja = "Emri i klientit nuk dihet"
+    elif kushti == "TIME":
+        pergjigja = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    elif kushti == "KENO": 
+        array = []
+        for i in range(0, 20):
+            array.append(random.randint(1,80))
+        array.sort()
+        pergjigja = str(array)[1:-1]
     
     
     try:
