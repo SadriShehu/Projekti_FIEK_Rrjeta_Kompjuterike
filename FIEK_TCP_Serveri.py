@@ -122,7 +122,7 @@ while kondita:
                 pergjigja = str(math.sqrt(3))
         else:
             pergjigja = "Formati: CONSTANT [KONSTANTA]\n TE NJOHURA: \nPI \n E \n TAU \n SQRT2 \n SQRT3"
-            elif kushti[0:8] == "FIZZBUZZ":
+    elif kushti[0:8] == "FIZZBUZZ":
         if kushti[8:9] == " ":
             numri = int(kushti[9:len(kushti)])
         if numri % 5 == 0 and numri % 3 == 0:
@@ -133,7 +133,7 @@ while kondita:
             pergjigja = "Buzz"
         else:
             pergjigja = "Nuk keni japur numer te vlefshem!"
-            elif kushti[0:6] == "VALUTA":
+    elif kushti[0:6] == "VALUTA":
         if kushti[6:7] == " ":
             string = kushti.split(" ")
             if string[1] == '1':
