@@ -69,6 +69,34 @@ while kondita:
             array.append(random.randint(1,80))
         array.sort()
         pergjigja = str(array)[1:-1]
+        elif kushti[0:11] == "NUMERPRIMAR":
+        if kushti[11:12] == " ":
+            pergjigja = ""
+            for i in range(0,int(kushti[12:len(kushti)])):
+                if i > 1:
+                     for j in range(2,i):
+                            if (i % j) == 0:
+                            break
+                        else:
+                        pergjigja += "\n" + str(i)
+        else:
+            pergjigja = "Formati: NUMERPRIMAR [Numri deri te i cili do te gjenerohen N.P.]"
+             elif kushti[0:8] == "CONSTANT":
+        if kushti[8:9] == " ":
+            if kushti[9:len(kushti)] == "PI":
+                pergjigja = str(math.pi)
+            elif kushti[9:len(kushti)] == "E":
+                pergjigja = str(math.e)
+            elif kushti[9:len(kushti)] == "TAU":
+                pergjigja = str(math.tau)
+            elif kushti[9:len(kushti)] == "SQRT2":
+                pergjigja = str(math.sqrt(2))
+            elif kushti[9:len(kushti)] == "SQRT3":
+                pergjigja = str(math.sqrt(3))
+        else:
+            pergjigja = "Formati: CONSTANT [KONSTANTA]\n TE NJOHURA: \nPI \n E \n TAU \n SQRT2 \n SQRT3"
+        else:
+        pergjigja = "Shenoni njeren nga sherbimet tona: IP, PORT, ZANORE, PRINTO, HOST, TIME, KENO, FAKTORIEL, KONVERTO, ARMSTRONG, FIBONNACI."
 
         
         
