@@ -47,7 +47,35 @@ while kondita:
         if kushti[0:7] == "PRINTO ":
             pergjigja = kushti[7:len(kushti)].lower().capitalize()
         else:
-            pergjigja = "Formati: PRINTO [teksti]";
+            pergjigja = "Formati: PRINTO [teksti]"
+            elif kushti[0:3] == "MAX":
+        if kushti[3:4] == " ":
+            kushti = kushti.split(" ")
+
+            num1 = int(kushti[1])
+            num2 = int(kushti[2])
+
+            if (num1 > num2):
+                pergjigja = kushti[1]
+            else:
+                pergjigja = kushti[2]
+        else:
+            pergjigja = "MAX [numri] [numri]"
+
+    elif kushti[0:3] == "MIN":
+        if kushti[3:4] == " ":
+            kushti = kushti.split(" ")
+
+            num1 = int(kushti[1])
+            num2 = int(kushti[2])
+
+            if (num1 < num2):
+                pergjigja = kushti[1]
+            else:
+                pergjigja = kushti[2]
+        else:
+            pergjigja = "MIN [numri] [numri]"
+            
                 elif kushti == "HOST":
         try:
             h = platform.uname()[1]
